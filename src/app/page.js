@@ -44,7 +44,12 @@ export default function Home() {
       >
         <div
           className="logo-wrapper"
-          style={{ width: "12rem", height: "13rem" }}
+          style={{
+            width: "15vw",
+            height: "15vw",
+            maxWidth: "12rem",
+            maxHeight: "12rem",
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
