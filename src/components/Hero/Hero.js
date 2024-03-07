@@ -1,14 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Hero.scss";
 import SplitType from "split-type";
 import gsap from "gsap";
 
 function Hero() {
+  let preloaderRef = useRef();
   // background effect
   useEffect(() => {
     const heroSection = document.getElementById("hero");
-    console.log(heroSection);
-
     const handlePointerMove = (e) => {
       const { currentTarget: el, clientX: x, clientY: y } = e;
       const {
@@ -31,13 +30,19 @@ function Hero() {
 
     const ctx = new gsap.context(() => {
       const tl = new gsap.timeline();
-      tl.from(".text-intro .word", {
-        yPercent: 100,
-        duration: 2,
+      tl.to(preloaderRef, {
+        scaleY: 0,
+        transformOrigin: "top",
+        duration: 1,
         ease: "expo.out",
-        stagger: 0.15,
-        delay: 3.5,
+        delay: 3,
       })
+        .from(".text-intro .word", {
+          yPercent: 100,
+          duration: 2,
+          ease: "expo.out",
+          stagger: 0.15,
+        })
         .from(
           ".text-description .word",
           {
@@ -51,7 +56,7 @@ function Hero() {
         .from(
           ".hero-resume-btn",
           {
-            yPercent: 101,
+            yPercent: 110,
             duration: 1.5,
             ease: "expo.out",
           },
@@ -64,7 +69,10 @@ function Hero() {
 
   return (
     <>
-      {/* <div className="background position-absolute"></div> */}
+      <div
+        className="background position-fixed"
+        ref={(el) => (preloaderRef = el)}
+      ></div>
       <section className="hero" id="hero">
         <div className="content container h-100 d-flex flex-column justify-content-center align-items-start">
           <p className="text-intro fw-medium">HELLO THERE, I&apos;M ANDREI.</p>

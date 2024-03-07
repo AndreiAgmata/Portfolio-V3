@@ -28,11 +28,13 @@ function Preloader() {
       });
     });
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+    };
   }, []);
   return (
     <div
-      className="pre-loader bg-black d-flex justify-content-center align-items-center"
+      className="pre-loader d-flex justify-content-center align-items-center"
       ref={(el) => (preloaderRef = el)}
     >
       <div

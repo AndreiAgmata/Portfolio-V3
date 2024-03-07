@@ -6,19 +6,24 @@ import Hero from "@/components/Hero/Hero";
 import Navbar from "@/components/NavBar/Navbar";
 import Preloader from "@/components/Preloader/Preloader";
 import Projects from "@/components/Projects/Projects";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [loaded, setLoaded] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 3000);
+  }, []);
   return (
     <main className="">
-      <>
-        <Preloader />
-        <Navbar />
-        <Hero />
-        <Projects />
-        <About />
-        <Contact />
-        <Footer />
-      </>
+      <Preloader />
+      <Navbar />
+      <Hero />
+      <Projects />
+      <About />
+      <Contact />
+      <Footer />
     </main>
   );
 }
