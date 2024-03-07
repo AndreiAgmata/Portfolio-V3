@@ -39,7 +39,7 @@ export default function Home() {
     <main className="">
       <div
         className="pre-loader bg-black d-flex justify-content-center align-items-center position-fixed"
-        style={{ width: "100%", height: "100dvh", zIndex: 9999 }}
+        style={{ width: "100%", height: "100vh", zIndex: 9999 }}
         ref={(el) => (preloaderRef = el)}
       >
         <div
