@@ -2,7 +2,7 @@
 
 .nav-menu {
   .menu-bg {
-    width: 0;
+    width: 100%;
     height: 100dvh;
   }
 
@@ -43,6 +43,10 @@
         cursor: pointer;
         transition: transform 0.3s ease;
 
+        @media (max-width: 576px) {
+          font-size: 3rem;
+        }
+
         &:hover {
           transform: translateY(-10px);
         }
@@ -80,6 +84,13 @@
 
         .button-wrapper {
           overflow: hidden;
+
+          button {
+            @media (max-width: 576px) {
+              padding-block: 0.5rem;
+              padding-inline: 1.25rem;
+            }
+          }
         }
       }
     }

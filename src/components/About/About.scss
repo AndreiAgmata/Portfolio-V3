@@ -32,6 +32,13 @@
 
       .button-wrapper {
         overflow: hidden;
+
+        button {
+          @media (max-width: 576px) {
+            padding-block: 0.5rem;
+            padding-inline: 1.25rem;
+          }
+        }
       }
     }
 

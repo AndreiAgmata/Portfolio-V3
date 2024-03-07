@@ -14,6 +14,8 @@ function Navbar() {
   let burgerRef = useRef();
   let logoRef = useRef();
 
+  let overlayTrigger = useRef();
+
   const openMenu = () => {
     console.log("clicked");
     const linkText = new SplitType(".link");
@@ -24,11 +26,16 @@ function Navbar() {
       zIndex: 999,
       duration: 0,
     })
-      .to(q(".menu-bg"), {
-        width: "100%",
-        duration: 0.75,
-        ease: "power4.out",
-      })
+      .fromTo(
+        q(".menu-bg"),
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          transformOrigin: "left",
+          duration: 0.75,
+          ease: "power4.out",
+        }
+      )
       .from(
         q(".word"),
         {
@@ -82,21 +89,25 @@ function Navbar() {
   //change burger colour
   useEffect(() => {
     const trigger = document.getElementsByClassName("hero");
-    gsap.registerPlugin(ScrollTrigger);
+
     const ctx = new gsap.context(() => {
-      const tl = new gsap.timeline({
-        scrollTrigger: {
-          trigger: trigger,
-          start: "bottom center",
-          // markers: true,
-          toggleActions: "play none none reverse",
-        },
-      });
-      const q = new gsap.utils.selector(burgerRef);
-      tl.to(q(".burgerPath"), {
-        stroke: "black",
-        duration: 0.5,
-        ease: "expo.out",
+      let mm = gsap.matchMedia();
+      mm.add("(min-width: 1200px)", () => {
+        gsap.registerPlugin(ScrollTrigger);
+        const tl = new gsap.timeline({
+          scrollTrigger: {
+            trigger: trigger,
+            start: "bottom center",
+            // markers: true,
+            toggleActions: "play none none reverse",
+          },
+        });
+        const q = new gsap.utils.selector(burgerRef);
+        tl.to(q(".burgerPath"), {
+          stroke: "black",
+          duration: 0.5,
+          ease: "expo.out",
+        });
       });
     });
 
@@ -106,34 +117,90 @@ function Navbar() {
   //change logo colour
   useEffect(() => {
     const trigger = document.getElementsByClassName("hero");
-    gsap.registerPlugin(ScrollTrigger);
+
     const ctx = new gsap.context(() => {
-      const tl = new gsap.timeline({
-        scrollTrigger: {
-          trigger: trigger,
-          start: "bottom center-=380",
-          // markers: true,
-          toggleActions: "play none none reverse",
-        },
-      });
-      const q = new gsap.utils.selector(logoRef);
-      tl.to(q(".logoPath"), {
-        stroke: "black",
-        duration: 0.5,
-        ease: "expo.out",
+      gsap.registerPlugin(ScrollTrigger);
+      let mm = gsap.matchMedia();
+      mm.add("(min-width: 1200px)", () => {
+        const tl = new gsap.timeline({
+          scrollTrigger: {
+            trigger: trigger,
+            start: "bottom center-=380",
+            // markers: true,
+            toggleActions: "play none none reverse",
+          },
+        });
+        const q = new gsap.utils.selector(logoRef);
+        tl.to(q(".logoPath"), {
+          stroke: "black",
+          duration: 0.5,
+          ease: "expo.out",
+        });
       });
     });
 
     return () => ctx.revert();
   });
 
+  //animate logo on startup
   useEffect(() => {
-    showLogo("logoPath1", "logoPath2");
+    showLogo("logoPath1", "logoPath2", 4);
+  }, []);
+
+  //animate navbar overlay
+  useEffect(() => {
+    const ctx = new gsap.context(() => {
+      const trigger = document.querySelector(".hero");
+
+      let mm = gsap.matchMedia();
+
+      mm.add("(max-width: 1199px)", () => {
+        const tl = new gsap.timeline({
+          scrollTrigger: {
+            trigger: trigger,
+            start: "top+=1 top",
+            // markers: true,
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        const q = new gsap.utils.selector(overlayTrigger);
+
+        tl.to(q(".navbar-overlay"), {
+          scaleY: 1,
+          transformOrigin: "top",
+          duration: 0.75,
+          ease: "power3.out",
+        })
+          .to(
+            q(".burgerPath"),
+            {
+              stroke: "black",
+              duration: 0.75,
+              ease: "power3.out",
+            },
+            "<0.15"
+          )
+          .to(
+            q(".logoPath"),
+            {
+              stroke: "black",
+              duration: 0.75,
+              ease: "power3.out",
+              // zIndex: 99,
+            },
+            "<0.15"
+          );
+      });
+    });
+
+    return () => ctx.revert();
   }, []);
 
   return (
     <>
-      <div className="navBar">
+      <div className="navBar" ref={(el) => (overlayTrigger = el)}>
+        <div className="navbar-overlay position-absolute"></div>
         <div className="items w-100 position-relative">
           <div className="logo-wrapper">
             <svg

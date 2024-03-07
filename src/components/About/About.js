@@ -45,14 +45,14 @@ function About() {
           q(".main-image"),
           {
             opacity: 0,
-            scale: 1.2,
+            scale: 1.05,
             duration: 3,
-            ease: "expo.in",
+            ease: "expo.inOut",
           },
           "<0.15"
         )
         .from(q(".resume-btn"), {
-          yPercent: 100,
+          yPercent: 101,
           duration: 1,
           ease: "expo.out",
         });
@@ -102,8 +102,8 @@ function About() {
             </div>
           </div>
 
-          <div className="col image-column d-flex justify-content-center align-items-center mt-5 position-relative ">
-            <div className="image-wrapper position-relative rounded-pill">
+          <div className="col image-column d-flex justify-content-center align-items-center mt-5 position-relative">
+            <div className="image-wrapper position-relative rounded-pill mt-5 mt-lg-0">
               <Image
                 src={"/me.png"}
                 alt="me"

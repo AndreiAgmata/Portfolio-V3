@@ -61,7 +61,7 @@ function NavMenu() {
       )
       .to(
         q(".menu-bg"),
-        { width: "0", duration: 1.5, ease: "expo.inOut" },
+        { scaleX: 0, duration: 1.5, ease: "expo.inOut" },
         "start"
       )
       .to(menuRef, { zIndex: -1, duration: 0 });
@@ -139,7 +139,7 @@ function NavMenu() {
             </svg>
           </div>
         </div>
-        <div className="links d-flex flex-grow-1 flex-column flex-xl-row justify-content-xl-between justify-content-center align-items-xl-center">
+        <div className="links d-flex flex-grow-1 flex-column flex-xl-row justify-content-xl-between justify-content-center gap-3 align-items-xl-center">
           <p className="link fw-medium">Home</p>
           <p className="link fw-medium">Projects</p>
           <p className="link fw-medium">About</p>

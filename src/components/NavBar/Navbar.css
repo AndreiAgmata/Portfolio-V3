@@ -17,6 +17,15 @@
     align-items: center;
   }
 }
+.navBar .navbar-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 1px);
+  background-color: white;
+  z-index: 97;
+  transform: scaleY(0);
+}
 .navBar .divider {
   height: 100%;
   border-right: 1px solid rgb(217, 217, 217);
@@ -48,6 +57,7 @@
   height: 1.75rem;
   position: absolute;
   top: 2rem;
+  z-index: 99;
 }
 @media (max-width: 1199px) {
   .navBar .logo-wrapper {
@@ -58,4 +68,5 @@
   width: 2.15rem;
   height: 1.65rem;
   cursor: pointer;
+  z-index: 99;
 }/*# sourceMappingURL=Navbar.css.map */

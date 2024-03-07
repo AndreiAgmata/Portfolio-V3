@@ -129,14 +129,12 @@ function Projects() {
         <div className="divider w-100"></div>
       </div>
 
-      {projectsData
-        // .filter((project) => project.name === "stampddd")
-        .map((project, index) => (
-          <div key={index} ref={addToProjectRefs}>
-            <Project itemId={index} project={project} />
-            <div className="projects-divider w-100"></div>
-          </div>
-        ))}
+      {projectsData.map((project, index) => (
+        <div key={index} ref={addToProjectRefs}>
+          <Project itemId={index} project={project} />
+          <div className="projects-divider w-100"></div>
+        </div>
+      ))}
     </section>
   );
 }

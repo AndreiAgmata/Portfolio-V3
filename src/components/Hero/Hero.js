@@ -6,6 +6,9 @@ import gsap from "gsap";
 function Hero() {
   // background effect
   useEffect(() => {
+    const heroSection = document.getElementById("hero");
+    console.log(heroSection);
+
     const handlePointerMove = (e) => {
       const { currentTarget: el, clientX: x, clientY: y } = e;
       const {
@@ -19,59 +22,60 @@ function Hero() {
     };
 
     document.body.addEventListener("pointermove", handlePointerMove);
-
-    // const heroElement = document.querySelector(".hero");
-    // if (heroElement) {
-    //   heroElement.addEventListener("pointermove", handlePointerMove);
-    // }
-
-    // return () => {
-    //   if (heroElement) {
-    //     heroElement.removeEventListener("pointermove", handlePointerMove);
-    //   }
-    // };
   }, []);
 
   // intro animation
   useEffect(() => {
     const introText = new SplitType(".text-intro");
-    const tl = gsap.timeline();
-    tl.from(".text-intro .word", {
-      yPercent: 100,
-      duration: 2,
-      ease: "expo.out",
-      stagger: 0.15,
-    });
-
-    return () => tl.kill();
-  }, []);
-
-  // description animation
-  useEffect(() => {
     const descriptionText = new SplitType(".text-description");
-    const tl = gsap.timeline();
-    tl.from(".text-description .word", {
-      yPercent: 100,
-      duration: 1.5,
-      ease: "expo.out",
-      stagger: 0.15,
+
+    const ctx = new gsap.context(() => {
+      const tl = new gsap.timeline();
+      tl.from(".text-intro .word", {
+        yPercent: 100,
+        duration: 2,
+        ease: "expo.out",
+        stagger: 0.15,
+        delay: 3.5,
+      })
+        .from(
+          ".text-description .word",
+          {
+            yPercent: 100,
+            duration: 1.5,
+            ease: "expo.out",
+            stagger: 0.15,
+          },
+          "<0.35"
+        )
+        .from(
+          ".hero-resume-btn",
+          {
+            yPercent: 101,
+            duration: 1.5,
+            ease: "expo.out",
+          },
+          "<1.5"
+        );
     });
 
-    return () => tl.kill();
+    return () => ctx.revert();
   }, []);
 
   return (
     <>
-      <div className="background position-absolute "></div>
-      <section className="hero">
+      <div className="background position-absolute"></div>
+      <section className="hero" id="hero">
         <div className="content container h-100 d-flex flex-column justify-content-center align-items-start">
           <p className="text-intro fw-medium">HELLO THERE, I&apos;M ANDREI.</p>
-          <p className="text-description fw-regular mt-3">
+          <p className="text-description fw-medium mt-3">
             I craft innovative <br /> digital experiences <br /> for the web.
           </p>
-          <button className="btn btn-outline-light rounded-pill mt-4">
-            View My Resume
-          </button>
+          <div className="button-wrapper mt-4">
+            <button className="btn btn-outline-light rounded-pill hero-resume-btn">
+              View My Resume
+            </button>
+          </div>
         </div>
       </section>
     </>

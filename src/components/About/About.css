@@ -28,6 +28,12 @@
 .about .content .text-column .button-wrapper {
   overflow: hidden;
 }
+@media (max-width: 576px) {
+  .about .content .text-column .button-wrapper button {
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+  }
+}
 .about .content .image-column .image-wrapper {
   width: 70vw;
   height: 70vw;

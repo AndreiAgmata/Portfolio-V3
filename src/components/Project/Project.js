@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import "./Project.scss";
 import gsap from "gsap";
-import SplitType from "split-type";
 
 function Project({ itemId, project }) {
   let imageCoverRef = useRef();
@@ -94,8 +93,14 @@ function Project({ itemId, project }) {
     <div
       id={`project-item${itemId}`}
       className="projects-item-wrapper position-relative"
+      style={{
+        backgroundImage: `url(${project.image})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
     >
-      <div
+      {/* <div
         className="image-wrapper w-100 h-100 position-absolute"
         style={{ top: 0, zIndex: 1 }}
       >
@@ -107,15 +112,16 @@ function Project({ itemId, project }) {
           quality={100}
           priority
         />
-      </div>
+      </div> */}
       <div
         className="image-cover position-absolute bg-white"
-        style={{ top: 0, zIndex: 2, width: "100%", height: "100%" }}
+        style={{ top: 0, zIndex: 1, width: "100%", height: "100%" }}
         ref={(el) => (imageCoverRef = el)}
       ></div>
+
       <div
         className="project-item container position-relative"
-        style={{ zIndex: 3 }}
+        style={{ zIndex: 2 }}
       >
         <div className="item-header row gx-4" ref={(el) => (itemRef = el)}>
           <div className="project-title col-12 col-md-6 d-flex flex-column">
