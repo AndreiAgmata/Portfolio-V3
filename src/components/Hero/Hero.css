@@ -7,7 +7,7 @@
 }
 
 .hero {
-  height: 100dvh;
+  height: 100vh;
   padding-left: 5vw;
   --x: calc(var(--posX, 0) * 1px);
   --y: calc(var(--posY, 0) * 1px);
