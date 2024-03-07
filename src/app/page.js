@@ -13,7 +13,7 @@ export default function Home() {
   let preloaderRef = useRef();
 
   useEffect(() => {
-    showLogo("preloaderLogoPath1", "preloaderLogoPath2");
+    showLogo("preloaderLogoPath1", "preloaderLogoPath2", 0.5);
 
     setTimeout(() => {
       hideLogo("preloaderLogoPath1", "preloaderLogoPath2");
@@ -29,7 +29,7 @@ export default function Home() {
         transformOrigin: "top",
         duration: 1,
         ease: "expo.out",
-        delay: 3,
+        delay: 3.5,
       });
     });
 

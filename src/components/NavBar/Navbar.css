@@ -57,6 +57,7 @@
   height: 1.75rem;
   position: absolute;
   top: 2rem;
+  z-index: 99;
 }
 @media (max-width: 1199px) {
   .navBar .logo-wrapper {
@@ -67,4 +68,5 @@
   width: 2.15rem;
   height: 1.65rem;
   cursor: pointer;
-} /*# sourceMappingURL=Navbar.css.map */
+  z-index: 99;
+}/*# sourceMappingURL=Navbar.css.map */
