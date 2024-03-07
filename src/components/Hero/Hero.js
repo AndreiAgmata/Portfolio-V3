@@ -64,7 +64,7 @@ function Hero() {
 
   return (
     <>
-      <div className="background position-absolute"></div>
+      {/* <div className="background position-absolute"></div> */}
       <section className="hero" id="hero">
         <div className="content container h-100 d-flex flex-column justify-content-center align-items-start">
           <p className="text-intro fw-medium">HELLO THERE, I&apos;M ANDREI.</p>
