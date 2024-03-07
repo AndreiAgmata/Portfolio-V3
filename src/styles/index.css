@@ -11981,6 +11981,7 @@ body {
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent; /* make scrollbar transparent */
+  -webkit-overflow-scrolling: touch;
 }
 
 a {
