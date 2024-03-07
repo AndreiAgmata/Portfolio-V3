@@ -29,7 +29,7 @@ export default function Home() {
         transformOrigin: "top",
         duration: 1,
         ease: "expo.out",
-        delay: 3.5,
+        delay: 3,
       });
     });
 
