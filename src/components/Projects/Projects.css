@@ -1,0 +1,35 @@
+.projects .projects-header-wrapper {
+  margin-left: 5vw;
+}
+@media (max-width: 1199px) {
+  .projects .projects-header-wrapper {
+    margin-left: 0;
+  }
+}
+.projects .projects-header-wrapper .header {
+  padding-block: 8rem;
+}
+.projects .projects-header-wrapper .header .title {
+  font-size: clamp(3rem, 7vw, 5.75rem);
+}
+.projects .projects-header-wrapper .header .title .line {
+  overflow: hidden;
+}
+.projects .projects-header-wrapper .header .subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+.projects .projects-header-wrapper .header .subtitle .line {
+  overflow: hidden;
+}
+.projects .divider {
+  border-top: 1px solid rgb(217, 217, 217);
+}
+.projects .projects-divider {
+  border-top: 1px solid rgb(217, 217, 217);
+  margin-left: 5vw;
+}
+@media (max-width: 1199px) {
+  .projects .projects-divider {
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=Projects.css.map */

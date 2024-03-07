@@ -1,0 +1,9 @@
+footer {
+  margin-left: 5vw;
+
+  @media (max-width: 1199px) {
+    margin-left: 0;
+  }
+
+  font-size: 0.75rem;
+}

@@ -1,0 +1,40 @@
+.projects-item-wrapper {
+  // border-bottom: 2px solid rgb(240, 240, 240);
+  margin-left: 5vw;
+  padding-block: 10rem;
+
+  @media (max-width: 1199px) {
+    margin-left: 0;
+  }
+
+  .project-item {
+    .item-header {
+      .project-title {
+        .name {
+          font-size: clamp(3rem, 7vw, 3.5rem);
+
+          .line {
+            overflow: hidden;
+          }
+        }
+
+        .subTitle {
+          font-size: clamp(0.75rem, 2vw, 1rem);
+
+          .line {
+            overflow: hidden;
+          }
+        }
+      }
+
+      .project-desc {
+        font-size: clamp(1rem, 7vw, 2rem);
+        line-height: clamp(0.75rem, 7vw, 2rem);
+
+        .line {
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

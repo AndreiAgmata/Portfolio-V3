@@ -1,0 +1,21 @@
+.contact {
+  margin-left: 5vw;
+
+  @media (max-width: 1199px) {
+    margin-left: 0;
+  }
+
+  .content {
+    .header {
+      font-size: clamp(3rem, 7vw, 5.75rem);
+
+      .line {
+        overflow: hidden;
+      }
+    }
+
+    .btn-wrapper {
+      overflow: hidden;
+    }
+  }
+}

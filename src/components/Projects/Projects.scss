@@ -1,0 +1,42 @@
+.projects {
+  .projects-header-wrapper {
+    // border-bottom: 2px solid rgb(240, 240, 240);
+    margin-left: 5vw;
+
+    @media (max-width: 1199px) {
+      margin-left: 0;
+    }
+
+    .header {
+      padding-block: 8rem;
+
+      .title {
+        font-size: clamp(3rem, 7vw, 5.75rem);
+
+        .line {
+          overflow: hidden;
+        }
+      }
+
+      .subtitle {
+        font-size: clamp(1rem, 2vw, 1.5rem);
+
+        .line {
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  .divider {
+    border-top: 1px solid rgb(217, 217, 217);
+  }
+
+  .projects-divider {
+    border-top: 1px solid rgb(217, 217, 217);
+    margin-left: 5vw;
+    @media (max-width: 1199px) {
+      margin-left: 0;
+    }
+  }
+}

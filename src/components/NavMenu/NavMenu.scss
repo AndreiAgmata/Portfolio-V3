@@ -1,0 +1,87 @@
+@use "../../styles/variables" as v;
+
+.nav-menu {
+  .menu-bg {
+    width: 0;
+    height: 100%;
+  }
+
+  .menu-logo-wrapper {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .content {
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
+
+    .menu-header {
+      top: 0;
+      left: 0;
+
+      .menu-logo-wrapper {
+        width: 1.75rem;
+        height: 1.75rem;
+      }
+
+      .menu-close-wrapper {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    .links {
+      padding-inline: 5rem;
+
+      @media (max-width: 1200px) {
+        padding-inline: 0;
+      }
+
+      .link {
+        font-size: clamp(2rem, 5.5vw, 5rem);
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-10px);
+        }
+        .line {
+          overflow: hidden;
+        }
+      }
+    }
+
+    .menu-footer {
+      padding-inline: 5rem;
+
+      @media (max-width: 1200px) {
+        padding-inline: 0;
+      }
+
+      .horizontal-line {
+        width: 100%;
+        border-top: 1px solid rgb(255, 255, 255);
+      }
+
+      .footer-content {
+        .social-media-links {
+          padding: 3px;
+          overflow: hidden;
+
+          .icon-wrapper {
+            transition: transform 0.3s ease;
+
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
+
+        .button-wrapper {
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "stampd",
+    "subtitle": "Modern Customer Loyalty Solution",
+    "description": "A cross-platform application that modernizes traditional Buy X Get Y loyalty cards.",
+    "image": "/stampd.png"
+  },
+  {
+    "name": "sknz",
+    "subtitle": "E-Commerce Platform",
+    "description": "Sleek and modern web store for custom card vinyl skins",
+    "image": "/sknz.png"
+  },
+  {
+    "name": "Mentor Match",
+    "subtitle": "A full–stack tutoring application",
+    "description": "A comprehensive mentoring platform promoting peer to peer tutoring - built for Seneca Students",
+    "image": "/stampd.png"
+  }
+]

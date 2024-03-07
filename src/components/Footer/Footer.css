@@ -1,0 +1,9 @@
+footer {
+  margin-left: 5vw;
+  font-size: 0.75rem;
+}
+@media (max-width: 1199px) {
+  footer {
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=Footer.css.map */
