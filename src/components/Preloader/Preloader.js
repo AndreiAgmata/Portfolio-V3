@@ -34,7 +34,7 @@ function Preloader() {
   }, []);
   return (
     <div
-      className="pre-loader d-flex justify-content-center align-items-center bg-black"
+      className="pre-loader d-flex justify-content-center align-items-center"
       ref={(el) => (preloaderRef = el)}
     >
       <div

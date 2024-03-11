@@ -15,8 +15,8 @@ export const showLogo = (svgId1, delay) => {
   timeline.to(path1, {
     strokeDashoffset: 0,
     opacity: 1,
-    duration: 0.7,
-    ease: "power1.inOut",
+    duration: 1,
+    ease: "expo.out",
     delay: delay,
   });
 };
@@ -28,9 +28,9 @@ export const hideLogo = (svgId1, delay) => {
   const timeline = new gsap.timeline();
   timeline.to(path1, {
     strokeDashoffset: -length1,
-    duration: 0.7,
+    duration: 1,
     opacity: 0,
-    ease: "power1.inOut",
+    ease: "expo.out",
     delay: delay,
   });
 };

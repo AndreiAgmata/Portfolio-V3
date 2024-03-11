@@ -35,7 +35,7 @@ function Hero() {
         transformOrigin: "top",
         duration: 1,
         ease: "expo.out",
-        delay: 3,
+        delay: 2.5,
       })
         .from(".text-intro .word", {
           yPercent: 100,

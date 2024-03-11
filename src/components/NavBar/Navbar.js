@@ -82,7 +82,7 @@ function Navbar() {
         "<0.25"
       );
 
-    showLogo("menuLogoPath1", "menuLogoPath2", 0.25);
+    showLogo("menuLogoPath1", 0.25);
     showCloseButton("menuClosePath1", "menuClosePath2", 0.5);
   };
 
@@ -144,7 +144,7 @@ function Navbar() {
 
   //animate logo on startup
   useEffect(() => {
-    showLogo("logoPath1", 4);
+    showLogo("logoPath1", 3.5);
   }, []);
 
   //animate navbar overlay
