@@ -144,7 +144,7 @@ function Navbar() {
 
   //animate logo on startup
   useEffect(() => {
-    showLogo("logoPath1", "logoPath2", 4);
+    showLogo("logoPath1", 4);
   }, []);
 
   //animate navbar overlay
@@ -211,20 +211,12 @@ function Navbar() {
             >
               <path
                 id="logoPath1"
-                d="M70.9182 599.682L363.824 70.4354"
+                d="M71 600L366 70L661 600"
                 stroke="white"
                 strokeWidth="130"
                 strokeLinecap="round"
+                strokeLinejoin="round"
                 opacity={0}
-                className="logoPath"
-              />
-              <path
-                id="logoPath2"
-                d="M660.906 599.682L500.21 309.324"
-                stroke="white"
-                strokeWidth="130"
-                opacity={0}
-                strokeLinecap="round"
                 className="logoPath"
               />
             </svg>

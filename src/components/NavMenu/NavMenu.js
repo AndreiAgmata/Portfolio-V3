@@ -16,7 +16,7 @@ function NavMenu() {
     let q = new gsap.utils.selector(menuRef);
     const tl = new gsap.timeline();
 
-    hideLogo("menuLogoPath1", "menuLogoPath2");
+    hideLogo("menuLogoPath1");
 
     tl.to(
       q(".word"),
@@ -94,19 +94,12 @@ function NavMenu() {
             >
               <path
                 id="menuLogoPath1"
-                d="M70.9182 599.682L363.824 70.4354"
+                d="M71 600L366 70L661 600"
                 stroke="white"
                 strokeWidth="130"
                 strokeLinecap="round"
+                strokeLinejoin="round"
                 opacity={0}
-              />
-              <path
-                id="menuLogoPath2"
-                d="M660.906 599.682L500.21 309.324"
-                stroke="white"
-                strokeWidth="130"
-                opacity={0}
-                strokeLinecap="round"
               />
             </svg>
           </div>

@@ -8,10 +8,10 @@ function Preloader() {
   let preloaderRef = useRef();
 
   useEffect(() => {
-    showLogo("preloaderLogoPath1", "preloaderLogoPath2", 0.5);
+    showLogo("preloaderLogoPath1", 0.5);
 
     setTimeout(() => {
-      hideLogo("preloaderLogoPath1", "preloaderLogoPath2");
+      hideLogo("preloaderLogoPath1");
     }, 2000);
   }, []);
 
@@ -34,7 +34,7 @@ function Preloader() {
   }, []);
   return (
     <div
-      className="pre-loader d-flex justify-content-center align-items-center"
+      className="pre-loader d-flex justify-content-center align-items-center bg-black"
       ref={(el) => (preloaderRef = el)}
     >
       <div
@@ -49,23 +49,17 @@ function Preloader() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
+          width={"100%"}
+          height={"100%"}
           viewBox="0 0 731 670"
         >
           <path
             id="preloaderLogoPath1"
-            d="M70.9182 599.682L363.824 70.4354"
+            d="M71 600L366 70L661 600"
             stroke="white"
             strokeWidth="130"
             strokeLinecap="round"
-            className="logoPath"
-            opacity={0}
-          />
-          <path
-            id="preloaderLogoPath2"
-            d="M660.906 599.682L500.21 309.324"
-            stroke="white"
-            strokeWidth="130"
-            strokeLinecap="round"
+            strokeLinejoin="round"
             className="logoPath"
             opacity={0}
           />
