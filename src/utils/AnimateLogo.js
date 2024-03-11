@@ -26,11 +26,13 @@ export const hideLogo = (svgId1, delay) => {
   const length1 = path1.getTotalLength();
 
   const timeline = new gsap.timeline();
-  timeline.to(path1, {
-    strokeDashoffset: -length1,
-    duration: 1,
-    opacity: 0,
-    ease: "expo.out",
-    delay: delay,
-  });
+  timeline
+    .to(path1, { scaleX: -1, duration: 0, transformOrigin: "center" })
+    .to(path1, {
+      strokeDashoffset: length1,
+      duration: 1,
+      opacity: 0,
+      ease: "expo.out",
+      delay: delay,
+    });
 };

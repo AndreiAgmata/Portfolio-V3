@@ -8,7 +8,7 @@ function Preloader() {
   let preloaderRef = useRef();
 
   useEffect(() => {
-    showLogo("preloaderLogoPath1", 0.5);
+    showLogo("preloaderLogoPath1", 0.75);
 
     setTimeout(() => {
       hideLogo("preloaderLogoPath1");
