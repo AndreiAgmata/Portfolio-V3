@@ -110,7 +110,11 @@ function Projects() {
   });
 
   return (
-    <section className="projects bg-white" ref={(el) => (trigger = el)}>
+    <section
+      className="projects bg-white"
+      ref={(el) => (trigger = el)}
+      id="projects"
+    >
       <div className="projects-header-wrapper">
         <div className="projects-wrapper container">
           <div className="header row">

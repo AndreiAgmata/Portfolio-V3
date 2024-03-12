@@ -62,7 +62,7 @@ function About() {
   }, []);
 
   return (
-    <section className="about bg-white" ref={(el) => (trigger = el)}>
+    <section className="about bg-white" ref={(el) => (trigger = el)} id="about">
       <div className="logo-wrapper">
         <svg
           xmlns="http://www.w3.org/2000/svg"

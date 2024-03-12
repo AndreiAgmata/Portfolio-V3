@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 import "./Hero.scss";
 import SplitType from "split-type";
@@ -67,6 +68,11 @@ function Hero() {
     return () => ctx.revert();
   }, []);
 
+  const openPdfInNewTab = () => {
+    const pdfUrl = "resume.pdf";
+    window.open(pdfUrl, "_blank");
+  };
+
   return (
     <>
       <div
@@ -80,7 +86,10 @@ function Hero() {
             I craft innovative <br /> digital experiences <br /> for the web.
           </p>
           <div className="button-wrapper mt-4">
-            <button className="btn btn-outline-light rounded-pill hero-resume-btn">
+            <button
+              className="btn btn-outline-light rounded-pill hero-resume-btn"
+              onClick={openPdfInNewTab}
+            >
               View My Resume
             </button>
           </div>

@@ -1,6 +1,6 @@
 .about {
   margin-left: 5vw;
-  padding-block: 10rem;
+  padding-block: 5rem;
 }
 @media (max-width: 1199px) {
   .about {

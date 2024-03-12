@@ -95,7 +95,11 @@ function Contact() {
   }, []);
 
   return (
-    <section className="contact bg-white" ref={(el) => (trigger = el)}>
+    <section
+      className="contact bg-white"
+      ref={(el) => (trigger = el)}
+      id="contact"
+    >
       <div className="content container">
         <h1 className="header">
           Reach out, <br /> let&apos;s talk

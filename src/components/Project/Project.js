@@ -7,6 +7,7 @@ import gsap from "gsap";
 function Project({ itemId, project }) {
   let imageCoverRef = useRef();
   let itemRef = useRef();
+  let imageContainerRef = useRef();
 
   const removeImageCover = (direction) => {
     const transformOrigin = direction === "top" ? "bottom" : "top";
@@ -14,16 +15,31 @@ function Project({ itemId, project }) {
 
     const q = new gsap.utils.selector(itemRef);
 
-    tl.to(imageCoverRef, {
-      scaleY: 0,
-      transformOrigin: transformOrigin,
-      duration: 0.25,
-      ease: "power3.inOut",
-    }).to(
-      itemRef,
-      { color: "white", duration: 0.25, ease: "power3.out" },
-      "<0.05"
-    );
+    tl.to(
+      imageCoverRef,
+      {
+        scaleY: 0,
+        transformOrigin: transformOrigin,
+        duration: 0.25,
+        ease: "power3.inOut",
+      },
+      "start"
+    )
+      .to(
+        itemRef,
+        { color: "white", duration: 0.25, ease: "power3.out" },
+        "<0.05"
+      )
+      .fromTo(
+        imageContainerRef,
+        { scale: 1.4 },
+        {
+          scale: 1,
+          duration: 2,
+          ease: "expo.out",
+        },
+        "start"
+      );
   };
 
   const showImageCover = (direction) => {
@@ -93,14 +109,14 @@ function Project({ itemId, project }) {
     <div
       id={`project-item${itemId}`}
       className="projects-item-wrapper position-relative"
-      style={{
-        backgroundImage: `url(${project.image})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
+      // style={{
+      //   backgroundImage: `url(${project.image})`,
+      //   backgroundSize: "cover",
+      //   backgroundRepeat: "no-repeat",
+      //   backgroundPosition: "center",
+      // }}
     >
-      {/* <div
+      <div
         className="image-wrapper w-100 h-100 position-absolute"
         style={{ top: 0, zIndex: 1 }}
       >
@@ -111,8 +127,9 @@ function Project({ itemId, project }) {
           style={{ objectFit: "cover" }}
           quality={100}
           priority
+          ref={(el) => (imageContainerRef = el)}
         />
-      </div> */}
+      </div>
       <div
         className="image-cover position-absolute bg-white"
         style={{ top: 0, zIndex: 1, width: "100%", height: "100%" }}

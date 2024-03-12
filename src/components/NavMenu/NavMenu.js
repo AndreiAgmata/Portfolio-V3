@@ -8,6 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { HiOutlineMailOpen } from "react-icons/hi";
+import Link from "next/link";
 
 function NavMenu() {
   let menuRef = useRef();
@@ -133,18 +134,31 @@ function NavMenu() {
           </div>
         </div>
         <div className="links d-flex flex-grow-1 flex-column flex-xl-row justify-content-xl-between justify-content-center gap-3 align-items-xl-center">
-          <p className="link fw-medium">Home</p>
-          <p className="link fw-medium">Projects</p>
-          <p className="link fw-medium">About</p>
-          <p className="link fw-medium">Contact</p>
+          <Link href={"#home"} onClick={closeMenu}>
+            <p className="link fw-medium">Home</p>
+          </Link>
+          <Link href={"#projects"} onClick={closeMenu}>
+            <p className="link fw-medium">Projects</p>
+          </Link>
+          <Link href={"#about"} onClick={closeMenu}>
+            <p className="link fw-medium">About</p>
+          </Link>
+          <Link href={"#contact"} onClick={closeMenu}>
+            <p className="link fw-medium">Contact</p>
+          </Link>
         </div>
         <div className="menu-footer">
           <div className="horizontal-line"></div>
           <div className="footer-content d-flex flex-row justify-content-between align-items-start mt-5 mb-4">
             <div className="button-wrapper">
-              <button className="btn btn-lg btn-outline-light menu-contact-btn">
-                Contact Me
-              </button>
+              <Link href={"#contact"}>
+                <button
+                  className="btn btn-lg btn-outline-light menu-contact-btn"
+                  onClick={closeMenu}
+                >
+                  Contact Me
+                </button>
+              </Link>
             </div>
 
             <div className="social-media-links d-flex gap-4">

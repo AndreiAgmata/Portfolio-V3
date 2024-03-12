@@ -1,6 +1,7 @@
 .projects-item-wrapper {
   margin-left: 5vw;
   padding-block: 10rem;
+  overflow: hidden;
 }
 @media (max-width: 1199px) {
   .projects-item-wrapper {
