@@ -93,19 +93,15 @@ function Hero() {
         {
           scaleY: 1,
           transformOrigin: "top",
-          duration: 1.5,
-          ease: "expo.out",
+          duration: 1,
+          ease: "none",
         }
-      ).to(
-        animatedLineRef,
-        {
-          scaleY: 0,
-          transformOrigin: "bottom",
-          duration: 1.5,
-          ease: "expo.out",
-        },
-        "<0.75"
-      );
+      ).to(animatedLineRef, {
+        scaleY: 0,
+        transformOrigin: "bottom",
+        duration: 1,
+        ease: "none",
+      });
     });
 
     return () => ctx.revert();
