@@ -6,6 +6,7 @@ import gsap from "gsap";
 
 function Hero() {
   let preloaderRef = useRef();
+  let animatedLineRef = useRef();
   // background effect
   useEffect(() => {
     const heroSection = document.getElementById("hero");
@@ -68,6 +69,34 @@ function Hero() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    const ctx = new gsap.context(() => {
+      const tl = new gsap.timeline({ repeat: -1 });
+
+      tl.fromTo(
+        animatedLineRef,
+        { scaleY: 0 },
+        {
+          scaleY: 1,
+          transformOrigin: "top",
+          duration: 1.5,
+          ease: "expo.out",
+        }
+      ).to(
+        animatedLineRef,
+        {
+          scaleY: 0,
+          transformOrigin: "bottom",
+          duration: 1.5,
+          ease: "expo.out",
+        },
+        "<0.75"
+      );
+    });
+
+    return () => ctx.revert();
+  });
+
   const openPdfInNewTab = () => {
     const pdfUrl = "resume.pdf";
     window.open(pdfUrl, "_blank");
@@ -92,6 +121,13 @@ function Hero() {
             >
               View My Resume
             </button>
+          </div>
+          <div className="see-my-work position-absolute m-0 pb-5 ps-3 border-start border-1 border-secondary-subtle">
+            <p>SEE MY WORK</p>
+            <div
+              className="animated-line position-absolute "
+              ref={(el) => (animatedLineRef = el)}
+            ></div>
           </div>
         </div>
       </section>

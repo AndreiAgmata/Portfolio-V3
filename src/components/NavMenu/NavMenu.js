@@ -162,16 +162,40 @@ function NavMenu() {
             </div>
 
             <div className="social-media-links d-flex gap-4">
-              <div className="icon-wrapper">
+              <div
+                className="icon-wrapper"
+                onClick={() =>
+                  window.open("https://github.com/AndreiAgmata", "_blank")
+                }
+              >
                 <FaGithub size={"1.75em"} className="icon" />
               </div>
-              <div className="icon-wrapper">
+              <div
+                className="icon-wrapper"
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/andrei-agmata-540245252/",
+                    "_blank"
+                  )
+                }
+              >
                 <FaLinkedin size={"1.75em"} className="icon" />
               </div>
-              <div className="icon-wrapper">
+              <div
+                className="icon-wrapper"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/andreiagmata.dev",
+                    "_blank"
+                  )
+                }
+              >
                 <FaInstagram size={"1.75em"} className="icon" />
               </div>
-              <div className="icon-wrapper">
+              <div
+                className="icon-wrapper"
+                onClick={() => window.open("mailto:agmataa1124@gmail.com")}
+              >
                 <HiOutlineMailOpen size={"1.75em"} className="icon" />
               </div>
             </div>

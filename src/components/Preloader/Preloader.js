@@ -9,10 +9,7 @@ function Preloader() {
 
   useEffect(() => {
     showLogo("preloaderLogoPath1", 0.75);
-
-    setTimeout(() => {
-      hideLogo("preloaderLogoPath1");
-    }, 2000);
+    hideLogo("preloaderLogoPath1", 2);
   }, []);
 
   useEffect(() => {

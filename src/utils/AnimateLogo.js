@@ -13,13 +13,17 @@ export const showLogo = (svgId1, delay) => {
   const timeline = new gsap.timeline();
 
   timeline
-    .to(path1, { scaleX: 1, duration: 0, transformOrigin: "center" })
+    .to(path1, {
+      scaleX: 1,
+      duration: 0,
+      transformOrigin: "center",
+      delay: delay,
+    })
     .to(path1, {
       strokeDashoffset: 0,
       opacity: 1,
       duration: 1,
       ease: "expo.out",
-      delay: delay,
     });
 };
 
@@ -29,12 +33,16 @@ export const hideLogo = (svgId1, delay) => {
 
   const timeline = new gsap.timeline();
   timeline
-    .to(path1, { scaleX: -1, duration: 0, transformOrigin: "center" })
+    .to(path1, {
+      scaleX: -1,
+      duration: 0,
+      transformOrigin: "center",
+      delay: delay,
+    })
     .to(path1, {
       strokeDashoffset: length1,
       duration: 1,
       opacity: 0,
       ease: "expo.out",
-      delay: delay,
     });
 };

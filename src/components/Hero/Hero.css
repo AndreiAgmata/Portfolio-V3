@@ -43,4 +43,13 @@
     padding-block: 0.5rem;
     padding-inline: 1.25rem;
   }
+}
+.hero .content .see-my-work {
+  bottom: 0;
+}
+.hero .content .see-my-work .animated-line {
+  border-left: 2px solid white;
+  height: 100%;
+  top: 0;
+  left: -2px;
 }/*# sourceMappingURL=Hero.css.map */

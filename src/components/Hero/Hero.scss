@@ -72,5 +72,16 @@
         }
       }
     }
+
+    .see-my-work {
+      bottom: 0;
+
+      .animated-line {
+        border-left: 2px solid white;
+        height: 100%;
+        top: 0;
+        left: -2px;
+      }
+    }
   }
 }
