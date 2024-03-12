@@ -5,7 +5,7 @@ import gsap from "gsap";
 import NavMenu from "../NavMenu/NavMenu";
 import SplitType from "split-type";
 import { showLogo, hideLogo } from "@/utils/AnimateLogo";
-import { animateBurger } from "@/utils/AnimateBurger";
+import { animateBurger, showBurger } from "@/utils/AnimateBurger";
 import { showCloseButton } from "@/utils/AnimateCloseBtn";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -13,6 +13,7 @@ function Navbar() {
   let navMenuRef = useRef();
   let burgerRef = useRef();
   let logoRef = useRef();
+  let dividerRef = useRef();
 
   let overlayTrigger = useRef();
 
@@ -142,11 +143,6 @@ function Navbar() {
     return () => ctx.revert();
   });
 
-  //animate logo on startup
-  useEffect(() => {
-    showLogo("logoPath1", 3.5);
-  }, []);
-
   //animate navbar overlay
   useEffect(() => {
     const ctx = new gsap.context(() => {
@@ -192,6 +188,32 @@ function Navbar() {
             "<0.15"
           );
       });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
+  //startup animations
+  useEffect(() => {
+    showLogo("logoPath1", 3);
+    showBurger("burgerPath1", "burgerPath2", "burgerPath3", 2.5);
+
+    const ctx = new gsap.context(() => {
+      const tl = new gsap.timeline();
+
+      tl.fromTo(
+        dividerRef,
+        {
+          scaleY: 0,
+        },
+        {
+          scaleY: 1,
+          transformOrigin: "top",
+          duration: 1,
+          ease: "expo.out",
+          delay: 2.5,
+        }
+      );
     });
 
     return () => ctx.revert();
@@ -266,7 +288,7 @@ function Navbar() {
             </svg>
           </div>
         </div>
-        <div className="divider"></div>
+        <div className="divider" ref={(el) => (dividerRef = el)}></div>
       </div>
       <div className="nav-menu-wrapper" ref={(el) => (navMenuRef = el)}>
         <NavMenu navMenuRef={navMenuRef} />

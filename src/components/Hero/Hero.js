@@ -3,32 +3,34 @@ import React, { useEffect, useRef } from "react";
 import "./Hero.scss";
 import SplitType from "split-type";
 import gsap from "gsap";
+import Link from "next/link";
 
 function Hero() {
   let preloaderRef = useRef();
   let animatedLineRef = useRef();
   // background effect
-  useEffect(() => {
-    const heroSection = document.getElementById("hero");
-    const handlePointerMove = (e) => {
-      const { currentTarget: el, clientX: x, clientY: y } = e;
-      const {
-        top: t,
-        left: l,
-        width: w,
-        height: h,
-      } = el.getBoundingClientRect();
-      el.style.setProperty("--posX", x - l - w / 2);
-      el.style.setProperty("--posY", y - t - h / 2);
-    };
+  // useEffect(() => {
+  //   const heroSection = document.getElementById("hero");
+  //   const handlePointerMove = (e) => {
+  //     const { currentTarget: el, clientX: x, clientY: y } = e;
+  //     const {
+  //       top: t,
+  //       left: l,
+  //       width: w,
+  //       height: h,
+  //     } = el.getBoundingClientRect();
+  //     el.style.setProperty("--posX", x - l - w / 2);
+  //     el.style.setProperty("--posY", y - t - h / 2);
+  //   };
 
-    document.body.addEventListener("pointermove", handlePointerMove);
-  }, []);
+  //   document.body.addEventListener("pointermove", handlePointerMove);
+  // }, []);
 
   // intro animation
   useEffect(() => {
     const introText = new SplitType(".text-intro");
     const descriptionText = new SplitType(".text-description");
+    const seeMyWorkText = new SplitType(".see-my-work .text");
 
     const ctx = new gsap.context(() => {
       const tl = new gsap.timeline();
@@ -63,7 +65,19 @@ function Hero() {
             ease: "expo.out",
           },
           "<1.5"
-        );
+        )
+        .from(".see-my-work", {
+          scaleY: 0,
+          transformOrigin: "top",
+          duration: 1,
+          ease: "expo.out",
+        })
+        .from(".see-my-work .text .word", {
+          yPercent: 110,
+          duration: 1,
+          stagger: 0.15,
+          ease: "expo.out",
+        });
     });
 
     return () => ctx.revert();
@@ -109,7 +123,7 @@ function Hero() {
         ref={(el) => (preloaderRef = el)}
       ></div>
       <section className="hero" id="hero">
-        <div className="content container h-100 d-flex flex-column justify-content-center align-items-start">
+        <div className="content container h-100 py-0 d-flex flex-column justify-content-center align-items-start position-relative ">
           <p className="text-intro fw-medium">HELLO THERE, I&apos;M ANDREI.</p>
           <p className="text-description fw-medium mt-3">
             I craft innovative <br /> digital experiences <br /> for the web.
@@ -122,13 +136,16 @@ function Hero() {
               View My Resume
             </button>
           </div>
-          <div className="see-my-work position-absolute m-0 pb-5 ps-3 border-start border-1 border-secondary-subtle">
-            <p>SEE MY WORK</p>
+          <Link
+            href={"#projects"}
+            className="see-my-work position-absolute m-0 pb-5 ps-3 border-start border-1 border-secondary-subtle"
+          >
+            <p className="text">SEE MY WORK</p>
             <div
               className="animated-line position-absolute "
               ref={(el) => (animatedLineRef = el)}
             ></div>
-          </div>
+          </Link>
         </div>
       </section>
     </>

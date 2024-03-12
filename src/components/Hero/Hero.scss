@@ -75,6 +75,15 @@
 
     .see-my-work {
       bottom: 0;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 400;
+
+      .text {
+        .line {
+          overflow: hidden;
+        }
+      }
 
       .animated-line {
         border-left: 2px solid white;

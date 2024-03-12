@@ -46,6 +46,12 @@
 }
 .hero .content .see-my-work {
   bottom: 0;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+.hero .content .see-my-work .text .line {
+  overflow: hidden;
 }
 .hero .content .see-my-work .animated-line {
   border-left: 2px solid white;
