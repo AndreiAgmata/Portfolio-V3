@@ -195,8 +195,8 @@ function Navbar() {
 
   //startup animations
   useEffect(() => {
-    showLogo("logoPath1", 3);
-    showBurger("burgerPath1", "burgerPath2", "burgerPath3", 2.5);
+    showLogo("logoPath1", 3.5);
+    showBurger("burgerPath1", "burgerPath2", "burgerPath3", 4);
 
     const ctx = new gsap.context(() => {
       const tl = new gsap.timeline();
