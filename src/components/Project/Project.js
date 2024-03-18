@@ -3,6 +3,9 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import "./Project.scss";
 import gsap from "gsap";
+import Link from "next/link";
+import { RiShareBoxLine } from "react-icons/ri";
+import { FiGithub } from "react-icons/fi";
 
 function Project({ itemId, project }) {
   let imageCoverRef = useRef();
@@ -109,12 +112,6 @@ function Project({ itemId, project }) {
     <div
       id={`project-item${itemId}`}
       className="projects-item-wrapper position-relative"
-      // style={{
-      //   backgroundImage: `url(${project.image})`,
-      //   backgroundSize: "cover",
-      //   backgroundRepeat: "no-repeat",
-      //   backgroundPosition: "center",
-      // }}
     >
       <div
         className="image-wrapper w-100 h-100 position-absolute"
@@ -146,6 +143,26 @@ function Project({ itemId, project }) {
             <p className="subTitle fw-medium  col-12 col-md-6">
               {project.subtitle}
             </p>
+            <div className="project-links mt-5">
+              {project.productionLink && (
+                <Link
+                  href={`${project.productionLink}`}
+                  className="project-link d-flex flex-row align-items-center gap-1"
+                >
+                  <p className="mb-0">See Production</p>
+                  <RiShareBoxLine size={"1.25em"} />
+                </Link>
+              )}
+              {project.githubLink && (
+                <Link
+                  href={`${project.githubLink}`}
+                  className="project-link d-flex flex-row align-items-center gap-1 mt-2"
+                >
+                  <p className="mb-0">See Code</p>
+                  <FiGithub size={"1.25em"} />
+                </Link>
+              )}
+            </div>
           </div>
 
           <p className="project-desc fw-regular col-12 col-md-6 mt-5 mt-md-0">

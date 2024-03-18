@@ -92,6 +92,17 @@ function Projects() {
             "<0.25"
           )
           .fromTo(
+            q(`.project-link`),
+            { opacity: 0 },
+            {
+              opacity: 1,
+              duration: 2,
+              ease: "expo.out",
+              stagger: 0.5,
+            },
+            "<0.25"
+          )
+          .fromTo(
             q(`.project-desc .word`),
             { yPercent: 100, opacity: 0 },
             {

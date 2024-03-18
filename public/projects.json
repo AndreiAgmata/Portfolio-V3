@@ -3,18 +3,24 @@
     "name": "stampd",
     "subtitle": "Modern Customer Loyalty Solution",
     "description": "A cross-platform application that modernizes traditional Buy X Get Y loyalty cards.",
-    "image": "/stampd.png"
+    "image": "/stampd.png",
+    "productionLink": "https://stampd.ca",
+    "githubLink": "https://github.com/AndreiAgmata/stampd-landing-page"
   },
   {
     "name": "sknz",
     "subtitle": "E-Commerce Platform",
     "description": "Sleek and modern web store for custom card vinyl skins",
-    "image": "/sknz.png"
+    "image": "/sknz.png",
+    "productionLink": "https://sknz.vercel.app/",
+    "githubLink": "https://github.com/AndreiAgmata/sknz"
   },
   {
     "name": "Mentor Match",
     "subtitle": "A full–stack tutoring application",
     "description": "A comprehensive mentoring platform promoting peer to peer tutoring - built for Seneca Students",
-    "image": "/stampd.png"
+    "image": "/stampd.png",
+    "productionLink": "https://prj-566-666-naa-team-01.vercel.app/",
+    "githubLink": "https://github.com/AndreiAgmata/MentorMatch"
   }
 ]
