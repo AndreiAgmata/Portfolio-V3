@@ -142,29 +142,36 @@ function Project({ itemId, project }) {
         style={{ zIndex: 2 }}
       >
         <div className="item-header row gx-4" ref={(el) => (itemRef = el)}>
-          <div className="project-title col-12 col-md-6 d-flex flex-column">
+          <div className="project-title col-12 col-md-6 d-flex flex-column align-items-start">
             <p className="name fw-semibold">{project.name}</p>
             <p className="subTitle fw-medium  col-12 col-md-6">
               {project.subtitle}
             </p>
             <div className="project-links mt-5">
               {project.productionLink && (
-                <div
-                  className="project-link d-flex flex-row align-items-center gap-1"
-                  onClick={() => openLinkInNewTab(project.productionLink)}
+                <Link
+                  href={project.productionLink}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
-                  <p className="mb-0">See Production</p>
-                  <RiShareBoxLine size={"1.25em"} />
-                </div>
+                  <p className="mb-0">
+                    See Production <RiShareBoxLine size={"1.25em"} />
+                  </p>
+                </Link>
               )}
               {project.githubLink && (
-                <div
-                  className="project-link d-flex flex-row align-items-center gap-1 mt-2"
-                  onClick={() => openLinkInNewTab(project.githubLink)}
+                <Link
+                  href={project.githubLink}
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
-                  <p className="mb-0">See Code</p>
-                  <FiGithub size={"1.25em"} />
-                </div>
+                  <p
+                    className="mb-0"
+                    onClick={() => openLinkInNewTab(project.githubLink)}
+                  >
+                    See Code <FiGithub size={"1.25em"} />
+                  </p>
+                </Link>
               )}
             </div>
           </div>
