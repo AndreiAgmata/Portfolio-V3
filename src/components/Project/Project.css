@@ -20,6 +20,9 @@
 .projects-item-wrapper .project-item .item-header .project-title .subTitle .line {
   overflow: hidden;
 }
+.projects-item-wrapper .project-item .item-header .project-link {
+  cursor: pointer;
+}
 .projects-item-wrapper .project-item .item-header .project-desc {
   font-size: clamp(1rem, 7vw, 2rem);
   line-height: clamp(0.75rem, 7vw, 2rem);

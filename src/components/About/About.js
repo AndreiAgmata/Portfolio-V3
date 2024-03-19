@@ -9,6 +9,11 @@ import SplitType from "split-type";
 function About() {
   let trigger = useRef();
 
+  const openPdfInNewTab = () => {
+    const pdfUrl = "resume.pdf";
+    window.open(pdfUrl, "_blank");
+  };
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
@@ -96,7 +101,10 @@ function About() {
             </p>
 
             <div className="button-wrapper mt-4">
-              <button className="btn btn-dark rounded-pill resume-btn">
+              <button
+                className="btn btn-dark rounded-pill resume-btn"
+                onClick={openPdfInNewTab}
+              >
                 View My Resume
               </button>
             </div>

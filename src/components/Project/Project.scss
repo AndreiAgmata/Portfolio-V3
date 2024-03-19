@@ -28,6 +28,10 @@
         }
       }
 
+      .project-link {
+        cursor: pointer;
+      }
+
       .project-desc {
         font-size: clamp(1rem, 7vw, 2rem);
         line-height: clamp(0.75rem, 7vw, 2rem);

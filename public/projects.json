@@ -19,8 +19,8 @@
     "name": "Mentor Match",
     "subtitle": "A full–stack tutoring application",
     "description": "A comprehensive mentoring platform promoting peer to peer tutoring - built for Seneca Students",
-    "image": "/stampd.png",
-    "productionLink": "https://prj-566-666-naa-team-01.vercel.app/",
+    "image": "/mentorMatch.png",
+    "productionLink": "https://mentor-match-eight.vercel.app/",
     "githubLink": "https://github.com/AndreiAgmata/MentorMatch"
   }
 ]

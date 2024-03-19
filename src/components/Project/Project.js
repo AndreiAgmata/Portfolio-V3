@@ -12,6 +12,10 @@ function Project({ itemId, project }) {
   let itemRef = useRef();
   let imageContainerRef = useRef();
 
+  const openLinkInNewTab = (link) => {
+    window.open(link, "_blank");
+  };
+
   const removeImageCover = (direction) => {
     const transformOrigin = direction === "top" ? "bottom" : "top";
     const tl = new gsap.timeline();
@@ -145,22 +149,22 @@ function Project({ itemId, project }) {
             </p>
             <div className="project-links mt-5">
               {project.productionLink && (
-                <Link
-                  href={`${project.productionLink}`}
+                <div
                   className="project-link d-flex flex-row align-items-center gap-1"
+                  onClick={() => openLinkInNewTab(project.productionLink)}
                 >
                   <p className="mb-0">See Production</p>
                   <RiShareBoxLine size={"1.25em"} />
-                </Link>
+                </div>
               )}
               {project.githubLink && (
-                <Link
-                  href={`${project.githubLink}`}
+                <div
                   className="project-link d-flex flex-row align-items-center gap-1 mt-2"
+                  onClick={() => openLinkInNewTab(project.githubLink)}
                 >
                   <p className="mb-0">See Code</p>
                   <FiGithub size={"1.25em"} />
-                </Link>
+                </div>
               )}
             </div>
           </div>
