@@ -16,6 +16,7 @@ function About() {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
     const ctx = gsap.context(() => {
       const sectionTitle = new SplitType(".about .content .header");
       const paragraph = new SplitType(".about .content .paragraph");
@@ -23,8 +24,9 @@ function About() {
         scrollTrigger: {
           trigger: trigger,
           start: "top center+=100",
-          //   markers: true,
-          //   toggleActions: "play none none reverse",
+          scroller: ".pages",
+          // markers: true,
+          // toggleActions: "play none none reverse",
         },
       });
 

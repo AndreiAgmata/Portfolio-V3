@@ -16,7 +16,7 @@ export default function Home() {
     }, 3000);
   }, []);
   return (
-    <main className="">
+    <main className="pages">
       <Preloader />
       <Navbar />
       <Hero />

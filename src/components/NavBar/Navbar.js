@@ -101,6 +101,7 @@ function Navbar() {
             start: "bottom center",
             // markers: true,
             toggleActions: "play none none reverse",
+            scroller: ".pages",
           },
         });
         const q = new gsap.utils.selector(burgerRef);
@@ -129,6 +130,7 @@ function Navbar() {
             start: "bottom center-=380",
             // markers: true,
             toggleActions: "play none none reverse",
+            scroller: ".pages",
           },
         });
         const q = new gsap.utils.selector(logoRef);
@@ -157,6 +159,7 @@ function Navbar() {
             start: "top+=1 top",
             // markers: true,
             toggleActions: "play none none reverse",
+            scroller: ".pages",
           },
         });
 
@@ -252,8 +255,6 @@ function Navbar() {
             ref={(el) => (burgerRef = el)}
           >
             <svg
-              //original
-              // viewBox="0 0 151 65"
               viewBox="0 0 230 95"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -298,21 +299,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-{
-  /* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 642 641"
-            >
-              <path
-                id="myPath"
-                stroke="#fff"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={150}
-                opacity={0}
-                d="M76 565 321 75l245 490"
-              />
-            </svg> */
-}

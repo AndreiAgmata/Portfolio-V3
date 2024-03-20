@@ -153,6 +153,7 @@ function Project({ itemId, project }) {
                   href={project.productionLink}
                   rel="noopener noreferrer"
                   target="_blank"
+                  className="project-link"
                 >
                   <p className="mb-0">
                     See Production <RiShareBoxLine size={"1.25em"} />
@@ -164,6 +165,7 @@ function Project({ itemId, project }) {
                   href={project.githubLink}
                   rel="noopener noreferrer"
                   target="_blank"
+                  className="project-link"
                 >
                   <p
                     className="mb-0"

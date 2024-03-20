@@ -24,12 +24,14 @@ function Projects() {
     const ctx = gsap.context(() => {
       const sectionTitle = new SplitType(".header .title");
       const sectionDescription = new SplitType(".header .subtitle");
+
       const tl = new gsap.timeline({
         scrollTrigger: {
           trigger: trigger,
           start: "top center+=100",
           // markers: true,
           // toggleActions: "play none none reverse",
+          scroller: ".pages",
         },
       });
       const q = new gsap.utils.selector(trigger);
@@ -62,11 +64,13 @@ function Projects() {
         ".item-header .project-title .subTitle"
       );
       const projectDesc = new SplitType(".item-header .project-desc");
+
       projectRefs.current.forEach((projectRef) => {
         const tl = new gsap.timeline({
           scrollTrigger: {
             trigger: projectRef,
             start: "top center+=200",
+            scroller: ".pages",
             // markers: true,
             // toggleActions: "play none none reverse",
           },

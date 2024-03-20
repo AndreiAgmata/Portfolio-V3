@@ -55,8 +55,9 @@ function Contact() {
         scrollTrigger: {
           trigger: trigger,
           start: "top center+=100",
-          //   markers: true,
-          //   toggleActions: "play none none reverse",
+          scroller: ".pages",
+          // markers: true,
+          // toggleActions: "play none none reverse",
         },
       });
 
