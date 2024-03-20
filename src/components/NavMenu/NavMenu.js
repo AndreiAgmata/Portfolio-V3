@@ -45,7 +45,7 @@ function NavMenu() {
       .to(
         q(".menu-contact-btn"),
         {
-          yPercent: -100,
+          yPercent: -110,
           duration: 0.5,
           ease: "expo.inOut",
         },
@@ -151,14 +151,14 @@ function NavMenu() {
           <div className="horizontal-line"></div>
           <div className="footer-content d-flex flex-row justify-content-between align-items-start mt-5 mb-4">
             <div className="button-wrapper">
-              <Link href={"#contact"}>
+              <a href={"#contact"}>
                 <button
                   className="btn btn-lg btn-outline-light menu-contact-btn"
                   onClick={closeMenu}
                 >
                   Contact Me
                 </button>
-              </Link>
+              </a>
             </div>
 
             <div className="social-media-links d-flex gap-4">
