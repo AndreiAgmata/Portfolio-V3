@@ -118,7 +118,7 @@ function Hero() {
         className="background position-fixed"
         ref={(el) => (preloaderRef = el)}
       ></div>
-      <section className="hero" id="hero">
+      <section className="hero" id="home">
         <div className="content container h-100 py-0 d-flex flex-column justify-content-center align-items-start position-relative ">
           <p className="text-intro fw-medium">HELLO THERE, I&apos;M ANDREI.</p>
           <p className="text-description fw-medium mt-3">

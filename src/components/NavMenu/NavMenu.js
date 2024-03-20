@@ -134,18 +134,18 @@ function NavMenu() {
           </div>
         </div>
         <div className="links d-flex flex-grow-1 flex-column flex-xl-row justify-content-xl-between justify-content-center gap-3 align-items-xl-center">
-          <Link href={"#home"} onClick={closeMenu}>
+          <a href={"#home"} onClick={closeMenu}>
             <p className="link fw-medium">Home</p>
-          </Link>
-          <Link href={"#projects"} onClick={closeMenu}>
+          </a>
+          <a href={"#projects"} onClick={closeMenu}>
             <p className="link fw-medium">Projects</p>
-          </Link>
-          <Link href={"#about"} onClick={closeMenu}>
+          </a>
+          <a href={"#about"} onClick={closeMenu}>
             <p className="link fw-medium">About</p>
-          </Link>
-          <Link href={"#contact"} onClick={closeMenu}>
+          </a>
+          <a href={"#contact"} onClick={closeMenu}>
             <p className="link fw-medium">Contact</p>
-          </Link>
+          </a>
         </div>
         <div className="menu-footer">
           <div className="horizontal-line"></div>
