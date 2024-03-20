@@ -9,22 +9,22 @@ function Hero() {
   let preloaderRef = useRef();
   let animatedLineRef = useRef();
   // background effect
-  // useEffect(() => {
-  //   const heroSection = document.getElementById("hero");
-  //   const handlePointerMove = (e) => {
-  //     const { currentTarget: el, clientX: x, clientY: y } = e;
-  //     const {
-  //       top: t,
-  //       left: l,
-  //       width: w,
-  //       height: h,
-  //     } = el.getBoundingClientRect();
-  //     el.style.setProperty("--posX", x - l - w / 2);
-  //     el.style.setProperty("--posY", y - t - h / 2);
-  //   };
+  useEffect(() => {
+    const heroSection = document.getElementById("hero");
+    const handlePointerMove = (e) => {
+      const { currentTarget: el, clientX: x, clientY: y } = e;
+      const {
+        top: t,
+        left: l,
+        width: w,
+        height: h,
+      } = el.getBoundingClientRect();
+      el.style.setProperty("--posX", x - l - w / 2);
+      el.style.setProperty("--posY", y - t - h / 2);
+    };
 
-  //   document.body.addEventListener("pointermove", handlePointerMove);
-  // }, []);
+    document.body.addEventListener("pointermove", handlePointerMove);
+  }, []);
 
   // intro animation
   useEffect(() => {
