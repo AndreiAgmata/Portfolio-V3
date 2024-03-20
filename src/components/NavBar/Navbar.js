@@ -18,11 +18,9 @@ function Navbar() {
   let overlayTrigger = useRef();
 
   const openMenu = () => {
-    console.log("clicked");
     const linkText = new SplitType(".link");
-    const tl = new gsap.timeline();
     const q = new gsap.utils.selector(navMenuRef);
-
+    const tl = new gsap.timeline();
     tl.to(q(".nav-menu"), {
       zIndex: 999,
       duration: 0,
