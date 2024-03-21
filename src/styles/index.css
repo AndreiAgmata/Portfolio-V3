@@ -11977,6 +11977,7 @@ body {
   overflow: hidden;
   background-color: white;
   height: 100dvh;
+  overscroll-behavior: none;
 }
 
 main {
@@ -11985,6 +11986,7 @@ main {
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
 }
 
 ::-webkit-scrollbar {
