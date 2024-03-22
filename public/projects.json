@@ -22,5 +22,13 @@
     "image": "/mentorMatch.png",
     "productionLink": "https://mentor-match-eight.vercel.app/",
     "githubLink": "https://github.com/AndreiAgmata/MentorMatch"
+  },
+  {
+    "name": "in'form",
+    "subtitle": "A furniture brochure",
+    "description": "Modern and minimalistic collection of curated furniture for a mock interior design company",
+    "image": "/inform.png",
+    "productionLink": "https://inform-tau.vercel.app/",
+    "githubLink": "https://github.com/AndreiAgmata/inform"
   }
 ]
